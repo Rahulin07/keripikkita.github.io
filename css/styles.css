@@ -1,0 +1,831 @@
+:root {
+  --primary-color: #4a6741;
+  --secondary-color: #9cb380;
+  --accent-color: #f3c622;
+  --background-color: #f9f7f3;
+  --text-color: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Navbar */
+nav.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: rgba(1, 1, 1, 0.8); /* Ubah rgb ke rgba */
+  color: var(--primary-color);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #513c28;
+}
+
+nav.Navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+nav.Navbar .navbar-logo span {
+  color: yellow;
+}
+
+nav.Navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+/* Navbar link hover effect */
+nav.Navbar .navbar-nav a {
+  position: relative;
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  padding-bottom: 5px; /* Added for spacing between link and underline */
+}
+
+nav.Navbar .navbar-nav a:hover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 2px;
+  background-color: yellow; /* Warna garis bawah */
+  width: 50%; /* Lebar garis */
+  transform: translateX(-50%); /* Agar garis berada di tengah */
+  transition: 0.2s linear;
+}
+
+nav.Navbar .navbar-nav a:hover {
+  color: yellow; /* Warna teks saat di-hover */
+}
+
+nav.Navbar .navbar-extra a {
+  color: #fff;
+  margin-left: 1rem;
+}
+
+nav.Navbar .navbar-extra a:hover {
+  color: yellow;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+.cart-items {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.cart-actions button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#cart-count {
+  font-size: 12px;
+  background-color: red;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 50%;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: yellow;
+}
+
+.hero .content p {
+  font-size: 1.5rem; /* Meningkatkan ukuran font untuk keterbacaan yang lebih baik */
+  margin-top: 1rem;
+  line-height: 1.4; /* Meningkatkan jarak antar baris */
+  font-weight: 300; /* Menggunakan bobot font yang lebih tebal untuk meningkatkan visibilitas */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Memperkuat bayangan teks untuk kontras */
+  color: #fff; /* Warna teks putih */
+  mix-blend-mode: normal; /* Menghapus mix-blend-mode untuk memperjelas warna teks */
+  border-radius: 8px; /* Sudut melengkung untuk estetika */
+}
+
+.hero .content .cta,
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: var(--bg);
+  background-color: var(--background-color);
+  border-radius: 0.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Meningkatkan efek bayangan */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Menambahkan transisi untuk efek hover */
+}
+
+/* Hover effect */
+.hero .content .cta:hover,
+.btn:hover {
+  background-color: var(
+    --secondary-color
+  ); /* Warna latar belakang saat hover */
+  transform: translateY(-2px); /* Efek naik saat hover */
+  color: white;
+}
+
+/* Active state */
+.hero .content .cta:active,
+.btn:active {
+  transform: translateY(0); /* Mengembalikan posisi saat ditekan */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mengurangi bayangan saat ditekan */
+}
+
+.advertisement {
+  background: var(--primary-color);
+  padding: 50px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  margin: 30px 0;
+  min-height: 50vh; /* Tinggi lebih kompak */
+}
+
+.advertisement .ad-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Maksimal lebar konten */
+  margin: auto;
+  width: 100%; /* Lebar penuh */
+}
+
+.advertisement .ad-text {
+  flex: 1; /* Mengambil ruang yang tersisa */
+  color: #fff; /* Warna teks */
+}
+
+.advertisement h2 {
+  font-size: 32px; /* Ukuran font untuk judul */
+  margin-bottom: 10px; /* Jarak bawah judul */
+  font-weight: 700; /* Ketebalan font */
+}
+
+.advertisement p {
+  font-size: 18px; /* Ukuran font untuk paragraf */
+  margin-bottom: 20px; /* Jarak bawah paragraf */
+}
+
+.advertisement .promo-code {
+  font-weight: bold; /* Ketebalan font promo */
+  background-color: var(--accent-color); /* Warna latar promo */
+  padding: 5px 10px; /* Padding untuk promo */
+  border-radius: 5px; /* Sudut lembut untuk promo */
+  color: black; /* Warna teks promo */
+}
+
+.advertisement .btn {
+  display: inline-block; /* Menjadikan tombol sebagai inline block */
+  padding: 15px 30px; /* Padding tombol */
+  background-color: var(--background-color); /* Warna latar tombol */
+  color: var(--text-color); /* Warna teks tombol */
+  font-weight: bold; /* Ketebalan font tombol */
+  border-radius: 5px; /* Sudut lembut tombol */
+  text-decoration: none; /* Menghapus garis bawah pada teks */
+  transition: background-color 0.3s ease; /* Transisi warna saat hover */
+}
+
+.advertisement .btn:hover {
+  background-color: var(--secondary-color); /* Ubah warna saat hover */
+  cursor: pointer; /* Ubah kursor saat hover */
+  color: var(--background-color);
+}
+
+.advertisement .ad-image img {
+  max-width: 400px; /* Lebar maksimum gambar */
+  border-radius: 15px; /* Sudut lembut untuk gambar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan gambar */
+  transition: transform 0.3s ease; /* Transisi saat hover */
+}
+
+.advertisement .ad-image img:hover {
+  transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* About Section */
+.about,
+.menu,
+.contact {
+  padding: 8rem 7% 1.4rem;
+  margin-top: 80px; /* Tambahkan margin sesuai dengan tinggi navbar */
+}
+
+.about h2,
+.menu h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem; /* Kurangi jarak margin-bottom */
+}
+
+.about h2 span,
+.menu h2 span,
+.contact h2 span {
+  color: yellow;
+}
+
+.row {
+  display: flex;
+}
+
+.about-img {
+  flex: 1 1 45%; /* Mengatur gambar menjadi sekitar 45% dari lebar container */
+  max-width: 450px; /* Membatasi lebar maksimal gambar */
+  margin: 0 auto; /* Tetap memastikan gambar terpusat */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-img img {
+  width: 100%; /* Gambar akan mengisi 100% dari .about-img */
+  border-radius: 15px; /* Tetap mempertahankan sudut melengkung */
+  object-fit: cover; /* Menjaga proporsi gambar */
+  height: auto; /* Tinggi disesuaikan secara otomatis */
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+.content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+/* Menu Section */
+.menu h2,
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.menu p,
+.contact p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.menu-card {
+  width: 18%;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+}
+
+.menu-card-img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.menu-card-title {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+}
+
+.menu-card-price {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+
+.cart-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-icons {
+  display: flex;
+  justify-content: center; /* Mengatur posisi ikon di tengah */
+  gap: 15px; /* Memberi jarak antar ikon */
+  margin-top: 10px; /* Memberi sedikit jarak antara ikon dengan bagian atas */
+}
+
+.menu-icons a {
+  font-size: 24px; /* Mengatur ukuran ikon */
+  color: #333; /* Warna ikon default */
+  transition: color 0.3s ease;
+}
+
+.menu-icons a:hover {
+  color: #25d366; /* Warna hijau saat ikon WhatsApp di-hover */
+}
+
+.whatsapp-icon {
+  color: #25d366; /* Warna khusus untuk ikon WhatsApp */
+}
+
+/* Contact Section */
+.contact .row {
+  display: flex;
+  flex-wrap: nowrap; /* Memastikan elemen tidak terbungkus ke bawah */
+  flex-direction: row; /* Form di sebelah kanan, map di sebelah kiri */
+  margin-top: 4rem;
+  background-color: var(--primary-color);
+}
+
+.contact .row .map {
+  flex: 1 1 50%; /* Lebar map 50% */
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 50%; /* Lebar form 50% */
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--background-color);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: #fff;
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-weight: bold;
+  color: var(--bg);
+  background-color: var(--background-color);
+  border-radius: 0.5rem; /* Menambahkan sudut melengkung */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transisi untuk hover */
+}
+
+/* Efek hover */
+.contact .row form .btn:hover {
+  background-color: var(--secondary-color); /* Warna saat di-hover */
+  transform: translateY(-2px); /* Efek naik saat di-hover */
+  color: white;
+}
+
+/* State aktif */
+.contact .row form .btn:active {
+  transform: translateY(0); /* Kembali ke posisi saat ditekan */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 40px 0 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section h3 {
+  color: var(--accent-color);
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--accent-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--secondary-color);
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%; /* Satuan % ditambahkan */
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  nav.Navbar {
+    background-color: #333;
+    padding: 1rem;
+  }
+
+  nav.Navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%; /* Memposisikan di luar tampilan */
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  nav.Navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  nav.Navbar .navbar-nav a {
+    color: var(--bg); /* Warna teks tautan */
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  nav.Navbar .navbar-nav a:hover {
+    color: var(--primary); /* Warna teks saat di-hover */
+  }
+
+  .menu p {
+    font-size: 1.3rem;
+  }
+
+  .menu card {
+    width: 30%;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .advertisement {
+    padding: 40px 15px; /* Mengurangi padding agar lebih kompak */
+    min-height: 60vh; /* Menyesuaikan tinggi */
+  }
+
+  .advertisement h2 {
+    font-size: 30px; /* Ukuran font sedikit lebih kecil */
+    text-align: center; /* Rata tengah judul */
+  }
+
+  .advertisement p {
+    font-size: 17px; /* Ukuran font untuk paragraf sedikit lebih kecil */
+    text-align: center; /* Rata tengah teks paragraf */
+  }
+
+  .advertisement .promo-code {
+    font-size: 15px; /* Ukuran font promo lebih kecil */
+    padding: 6px 12px; /* Mengurangi padding */
+  }
+
+  .advertisement .btn {
+    padding: 12px 25px; /* Mengurangi padding tombol */
+    font-size: 15px; /* Ukuran font tombol lebih kecil */
+    display: block; /* Tombol mengambil lebar penuh */
+    margin: 0 auto; /* Pusatkan tombol */
+  }
+
+  .advertisement .ad-image img {
+    max-width: 100%; /* Gambar mengambil lebar penuh */
+    height: auto; /* Memastikan tinggi otomatis */
+  }
+
+  .advertisement .ad-content {
+    flex-direction: column; /* Mengubah arah konten menjadi kolom */
+    align-items: center; /* Pusatkan konten */
+  }
+
+  .advertisement .ad-text {
+    text-align: center; /* Rata tengah teks */
+    margin-bottom: 20px; /* Jarak bawah untuk teks */
+  }
+
+  .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+  }
+}
+
+/* Media Queries for Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Navbar */
+  nav.Navbar {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column; /* Menu stacked vertically */
+    align-items: center; /* Center align items */
+    justify-content: center;
+  }
+
+  nav.Navbar ul {
+    display: flex;
+    flex-direction: column; /* Vertical menu items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%; /* Full width for menu */
+  }
+
+  nav.Navbar ul li {
+    margin: 0.5rem 0; /* Add space between items */
+    width: 100%; /* Ensure the menu item takes full width */
+    text-align: center; /* Center menu items */
+  }
+
+  /* Hero Section */
+  .hero .content {
+    padding: 1rem;
+    text-align: center; /* Center text on mobile */
+  }
+
+  .hero .content h1 {
+    font-size: 2.5rem; /* Adjust font size for mobile */
+  }
+
+  .hero .content p {
+    font-size: 1.2rem; /* Adjust paragraph size */
+  }
+
+  .advertisement {
+    padding: 30px 10px; /* Mengurangi padding */
+    min-height: 50vh; /* Tinggi lebih kecil */
+  }
+
+  .advertisement h2 {
+    font-size: 28px; /* Ukuran font lebih kecil untuk judul */
+  }
+
+  .advertisement p {
+    font-size: 16px; /* Ukuran font lebih kecil untuk paragraf */
+  }
+
+  .advertisement .promo-code {
+    font-size: 14px; /* Ukuran font promo lebih kecil */
+    padding: 4px 8px; /* Mengurangi padding */
+  }
+
+  .advertisement .btn {
+    padding: 10px 20px; /* Mengurangi padding tombol */
+    font-size: 16px; /* Ukuran font tombol lebih kecil */
+  }
+
+  .advertisement .ad-image img {
+    max-width: 100%; /* Gambar mengambil lebar penuh */
+    height: auto; /* Memastikan tinggi otomatis */
+  }
+
+  .advertisement .ad-content {
+    flex-direction: column; /* Mengubah arah konten menjadi kolom */
+    align-items: center; /* Pusatkan konten */
+  }
+
+  .advertisement .ad-text {
+    text-align: center; /* Rata tengah teks */
+    margin-bottom: 15px; /* Jarak bawah untuk teks */
+  }
+
+  /* Menu Cards */
+  .menu-card {
+    width: 90%; /* Make menu cards responsive */
+    margin-bottom: 1.5rem; /* Add space between cards */
+  }
+
+  /* Contact Section */
+  .contact .row {
+    flex-direction: column; /* Stack the form and map */
+    padding: 1rem; /* Add padding for mobile */
+  }
+
+  .contact .form,
+  .contact .map {
+    width: 100%; /* Make form and map full width */
+    margin-bottom: 1rem; /* Add spacing between elements */
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 0.75rem 1.5rem; /* Adjust button padding */
+    font-size: 1rem; /* Make button text smaller */
+    width: 100%; /* Full width buttons */
+    text-align: center;
+  }
+
+  /* General */
+  body {
+    font-size: 14px; /* Reduce overall font size */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.8rem; /* Reduce margin between headings */
+  }
+
+  p {
+    margin-bottom: 1rem; /* Ensure paragraphs have consistent spacing */
+  }
+}

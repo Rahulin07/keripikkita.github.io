@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keripik Kita</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar Start-->
+    <nav class="Navbar">
+      <a href="#" class="navbar-logo">keripik<span>kita</span>.</a>
+
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Kontak</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart">
+          <i data-feather="shopping-cart"></i>
+          <span id="cart-count">0</span>
+          <!-- Menambahkan jumlah item di keranjang -->
+        </a>
+
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+
+    <!-- Navbar End-->
+
+    <!-- Hero Section Start -->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Rasakan Sensasi <span>Kriuknya</span></h1>
+        <p>
+          Keripik pisang berkualitas dengan berbagai varian rasa yang menggugah
+          selera.
+        </p>
+        <a href="#menu" class="cta">Beli Sekarang</a>
+      </main>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Advertisement Section Start -->
+    <section id="advertisement" class="advertisement">
+      <div class="ad-content">
+        <div class="ad-text">
+          <h2>Diskon Spesial 20%!</h2>
+          <p>
+            Gunakan kode promo <span class="promo-code">KRIPIK25</span> dan
+            dapatkan diskon 25% untuk semua varian rasa! Penawaran terbatas,
+            jangan sampai terlewatkan.
+          </p>
+          <a href="#menu" class="btn">Beli Sekarang</a>
+        </div>
+        <div class="ad-image">
+          <img src="img/iklan.jpeg" alt="Promo Keripik Kita" />
+        </div>
+      </div>
+    </section>
+    <!-- Advertisement Section End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="about">
+      <h2><span>Tentang </span>Kami</h2>
+      <div class="row">
+        <div class="about-img">
+          <img src="img/keripik.jpg" alt="Tentang Kami" />
+        </div>
+        <div class="content">
+          <h3>Kenapa Memilih Keripik Kami?</h3>
+          <p>
+            Saat kamu mencari camilan yang berbeda dari biasanya, KERIPIK KITA
+            hadir dengan varian rasa cokelat dan tiramisu yang unik. Begitu
+            bungkus dibuka, aroma manis langsung menggoda, dan ketika digigit,
+            kerenyahan pisang berpadu sempurna dengan rasa gurih manis. Setiap
+            gigitan menghadirkan sensasi kriuk yang memuaskan, sesuai dengan
+            tagline "Rasakan Sensasi Kriuknya." Bukan hanya soal rasa, tapi
+            keripik ini juga dibuat dari bahan-bahan alami tanpa pengawet,
+            sehingga aman untuk dikonsumsi kapan saja.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Menu Section Start -->
+    <section id="menu" class="menu">
+      <h2><span>Menu </span>Kami</h2>
+      <p>
+        Cobalah keripik pisang KERIPIK KITA dengan rasa cokelat dan tiramisu
+        yang nikmat. Dibuat dari bahan alami, kriuknya pasti memuaskan!
+      </p>
+
+      <div class="row">
+        <div
+          class="menu-card"
+          data-title="Keripik Cokelat"
+          data-price="IDR 10K"
+        >
+          <img src="img/1.jpg" alt="Keripik Cokelat" class="menu-card-img" />
+          <h3 class="menu-card-title">Keripik Cokelat</h3>
+          <p class="menu-card-price">IDR 10K</p>
+
+          <!-- Icons for cart and WhatsApp -->
+          <div class="menu-icons">
+            <a href="#" class="cart-icon"
+              ><i data-feather="shopping-cart"></i
+            ></a>
+            <a
+              href="https://wa.me/6281234567890"
+              target="_blank"
+              class="whatsapp-icon"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+
+        <div
+          class="menu-card"
+          data-title="Keripik Tiramisu"
+          data-price="IDR 10K"
+        >
+          <img src="img/2.jpg" alt="Keripik Tiramisu" class="menu-card-img" />
+          <h3 class="menu-card-title">Keripik Tiramisu</h3>
+          <p class="menu-card-price">IDR 10K</p>
+
+          <!-- Icons for cart and WhatsApp -->
+          <div class="menu-icons">
+            <a href="#" class="cart-icon"
+              ><i data-feather="shopping-cart"></i
+            ></a>
+            <a
+              href="https://wa.me/082163113960"
+              target="_blank"
+              class="whatsapp-icon"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Menu Section End -->
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="contact">
+      <h2><span>Kontak </span>Kami</h2>
+      <p>
+        "Hubungi kami untuk pertanyaan, saran, atau pemesanan. Kami siap
+        membantu!"
+      </p>
+
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.21032871589!2d98.64916167348997!3d3.5388741506364347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312557a8f4b473%3A0x22c8f20d3c5a976c!2sGg.%20Cinta%20Rakyat%2C%20Kwala%20Bekala%2C%20Kec.%20Medan%20Johor%2C%20Kota%20Medan%2C%20Sumatera%20Utara!5e0!3m2!1sid!2sid!4v1727771300166!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+
+        <form action="">
+          <div class="input-group">
+            <label for="name"><i data-feather="user"></i></label>
+            <input type="text" id="name" placeholder="Nama" required />
+          </div>
+          <div class="input-group">
+            <label for="email"><i data-feather="mail"></i></label>
+            <input type="email" id="email" placeholder="Email" required />
+          </div>
+          <div class="input-group">
+            <label for="phone"><i data-feather="phone"></i></label>
+            <input type="text" id="phone" placeholder="No HP" required />
+          </div>
+          <button type="submit" class="btn">Kirim Pesan</button>
+        </form>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Start -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Keripik Kita</h3>
+          <p>Jl. Parang I Gg. Cinta Rakyat</p>
+          <p>Telp: 082163113960</p>
+          <p>
+            Email:
+            <a href="mailto:info@keripikkita.com">info@keripikkita.com</a>
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Ikuti Kami</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a
+              href="https://www.instagram.com/keripik_kita.official"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Keripik Kita. Hak Cipta Dilindungi.</p>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>
